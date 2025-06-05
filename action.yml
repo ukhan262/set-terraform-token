@@ -1,0 +1,24 @@
+name: 'Set Terraform Token'
+description: 'Configures Terraform CLI with a secure token'
+inputs:
+  tfe_token:
+    description: 'Terraform Cloud token'
+    required: true
+  tfe_organization:
+    description: 'Terraform Cloud organization'
+    required: true
+  use_json:
+    description: 'Use credentials.tfrc.json'
+    required: false
+    default: 'true'
+  append:
+    description: 'Append to existing file'
+    required: false
+    default: 'false'
+  log_level:
+    description: 'Logging level'
+    required: false
+    default: 'info'
+runs:
+  using: 'node16'
+  main: 'index.js'
